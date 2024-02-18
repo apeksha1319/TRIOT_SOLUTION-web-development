@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>JavaScript Example</title><style>
+/* Global styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+button {
+    background-color: #007bff;
+    /* Blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+p {
+    font-size: 18px;
+}
+
+</style></head><body><button onclick="showAlert()">Show Alert</button><button onclick="updateElement()">Update Element</button><p id="exampleElement">Original Text</p><!-- JavaScript code --><script> // JavaScript functions
+function showAlert() {
+    window.alert("Hello! This is an alert message.");
+}
+
+function updateElement() {
+    var element=document.getElementById("exampleElement");
+    element.textContent="This text has been updated!";
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    /* Center items vertically */
+}
+
+button {
+    background-color: #007bff;
+    /* Blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+p {
+    font-size: 18px;
+    margin: 10px;
+    /* Add margin to paragraph */
+}
+
+</script></body></html>

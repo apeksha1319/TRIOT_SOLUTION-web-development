@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Form Validation</title>
+    <link rel="stylesheet" href="T3B.css">
+    <style>
+        /* Basic CSS styling */
+        
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .error {
+            color: red;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Basic Form</h2>
+
+    <form id="myForm" onsubmit="return validateForm()">
+        <div>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <span id="nameError" class="error"></span>
+        </div>
+        <div>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <span id="emailError" class="error"></span>
+        </div>
+        <div>
+            <label for="phone">Phone:</label><br>
+            <input type="tel" id="phone" name="phone"><br>
+            <span id="phoneError" class="error"></span>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+
+            var nameError = document.getElementById("nameError");
+            var emailError = document.getElementById("emailError");
+            var phoneError = document.getElementById("phoneError");
+
+            nameError.innerHTML = "";
+            emailError.innerHTML = "";
+            phoneError.innerHTML = "";
+
+            var isValid = true;
+
+            if (name === "") {
+                nameError.innerHTML = "Name is required";
+                isValid = false;
+            }
+
+            if (email === "") {
+                emailError.innerHTML = "Email is required";
+                isValid = false;
+            } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+                emailError.innerHTML = "Invalid email format";
+                isValid = false;
+            }
+
+            if (phone === "") {
+                phoneError.innerHTML = "Phone number is required";
+                isValid = false;
+            } else if (!/^\d{10}$/.test(phone)) {
+                phoneError.innerHTML = "Invalid phone number";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+
+</body>
+
+</html>

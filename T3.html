@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+    <link rel="stylesheet" href="T3.css">
+</head>
+
+<body>
+    <button onclick="showAlert()">Show Alert</button>
+    <button onclick="updateElement()">Update Element</button>
+    <p id="exampleElement">Original Text</p>
+
+    <!-- JavaScript code -->
+    <script>
+        // JavaScript functions
+        function showAlert() {
+            window.alert("Hello! This is an alert message.");
+        }
+
+        function updateElement() {
+            var element = document.getElementById("exampleElement");
+            element.textContent = "This text has been updated!";
+        }
+    </script>
+</body>
+
+</html>
